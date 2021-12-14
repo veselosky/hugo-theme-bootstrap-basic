@@ -1,0 +1,8 @@
+<p>© {{ or
+  .Params.copyright_year
+  .PublishDate
+  .Date
+  now
+  | time.Format "2006"
+  }} {{ .Param "author.name" }}. All rights reserved.
+</p>

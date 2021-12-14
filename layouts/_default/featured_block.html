@@ -1,0 +1,19 @@
+<div class="col-md-6">
+  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+    <div class="col p-4 d-flex flex-column position-static">
+      <h3 class="mb-0"><a class="text-dark" href="{{ .Permalink }}">{{ .Title}}</a></h3>
+      <p class="card-text mb-auto">{{ .Description }}</p>
+      <a href="{{ .Permalink }}">{{ printf "Continue reading" }}</a>
+    </div>
+    <div class="col-auto d-none d-lg-block">
+      <a href="{{ .Permalink }}">
+      {{ with .Resources.GetMatch "featured_image" -}}
+        <img class="card-img-right flex-auto d-none d-md-block img-fluid float-right" alt="{{ .Title }}"
+      src="{{ (.Fill "200x250").Permalink }}" />
+      {{ else -}}
+        <img class="card-img-right flex-auto d-none d-md-block" src="https://placeimg.com/200/250/animals/sepia" alt="A cute animal">
+      {{ end -}}
+      </a>
+    </div>
+  </div>
+</div>

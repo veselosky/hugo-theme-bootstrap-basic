@@ -1,0 +1,6 @@
+<article class="blog-post">
+  <h2 class="blog-post-title"><a href="{{ .Permalink }}">{{ or .LinkTitle .Title }}</a></h2>
+  <p class="blog-post-meta">{{ or .Date .PublishDate | time.Format ":date_medium" }} {{ .Params.byline | default site.Params.byline }}</p>
+  {{ .Summary | safeHTML }}
+  <p><a href="{{ .Permalink }}#continue-reading">{{ printf "Continue reading" }}</a></p>
+</article><!-- /.blog-post -->
